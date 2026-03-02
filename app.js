@@ -15,7 +15,17 @@ let tasks = [
 app.get('/', methods.welcome);
 
 //add other methods underneath here
-
+app.post('/createTask', (req, res) => {
+    if(req.body.title === undefined || req.body.description === undefined || req.body.status == undefined)
+        return res.status(400).json({ message: 'Add all fields' });
+    
+    if(req.body.status !== "completed" && req.body.status !== "pending")
+        return res.status(400).json({ message: "Invalid status. Use pending/completed" });
+    
+    const newTask = { id: tasks.length + 1, ...req.body };
+    tasks.push(newTask);
+    res.status(201).json(newTask);
+});
 
 
 

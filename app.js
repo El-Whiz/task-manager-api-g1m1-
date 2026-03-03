@@ -15,10 +15,11 @@ let tasks = [
 app.get('/', methods.welcome);
 
 //add other methods underneath here
+//patch update
+app.patch('/tasks/:id',methods.patch);
 
-
-
-
+//put update
+app.put('/tasks/:id', methods.put);
 
 
 

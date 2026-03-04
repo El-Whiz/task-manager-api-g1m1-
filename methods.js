@@ -6,7 +6,7 @@ let tasks = [
 ]
 
 function welcome(req, res){
-    res.send('Welcome! This is the group1:minigroup1 project (Task Manager API)');
+    res.send('Welcome! This is the group1(Backend) project (Task Manager API)');
 }
 
 function getAll(req, res){
